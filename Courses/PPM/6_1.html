@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Pengantar Pasar Modal – Landing Page (Lensetek)</title>
+  <meta name="description" content="Landing page mata kuliah Pengantar Pasar Modal: materi ringkas, latihan interaktif, dan alat bantu analisis.">
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    /* Light theme tweaks (tetap ringan) */
+    :root {
+      --brand: #0ea5e9; /* sky-500 */
+      --ink: #0f172a;   /* slate-900 */
+      --sub: #334155;   /* slate-700 */
+      --bg: #f8fafc;    /* slate-50 */
+      --card: #ffffff;
+      --ring: rgba(14,165,233,.35);
+    }
+    html, body { background: var(--bg); color: var(--ink); }
+    .card { background: var(--card); border: 1px solid #e2e8f0; }
+    .ring-brand:focus { outline: none; box-shadow: 0 0 0 4px var(--ring); }
+    .link { color: var(--brand); }
+    .link:hover { text-decoration: underline; }
+    .kbd { border:1px solid #cbd5e1; padding:.1rem .4rem; border-radius:.375rem; font-size:.875rem }
+  </style>
+</head>
+<body class="min-h-screen">
+  <!-- Header / Navbar -->
+  <header class="sticky top-0 z-50 backdrop-blur bg-white/80 border-b border-slate-200">
+    <div class="mx-auto max-w-6xl px-4 py-3 flex items-center justify-between">
+      <div class="flex items-center gap-3">
+        <div class="w-9 h-9 rounded-xl bg-sky-500/10 flex items-center justify-center">
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-sky-600" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M3 3h18v4H3zM3 17h18v4H3zM3 7l9 6 9-6"/></svg>
+        </div>
+        <div>
+          <p class="text-sm text-slate-500">Mata Kuliah</p>
+          <h1 class="text-lg font-semibold">Pengantar Pasar Modal</h1>
+        </div>
+      </div>
+      <nav class="hidden md:flex items-center gap-4">
+        <a href="#materi" class="link text-sm">Materi</a>
+        <a href="#interaktif" class="link text-sm">Interaktif</a>
+        <a href="#video" class="link text-sm">Video</a>
+        <a href="#alat" class="link text-sm">Alat Bantu</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="mx-auto max-w-6xl px-4 py-10">
+    <div class="grid md:grid-cols-2 gap-8 items-center">
+      <div>
+        <h2 class="text-3xl md:text-4xl font-bold leading-tight">Belajar Pasar Modal dengan Cara Simpel & Relevan 🇮🇩</h2>
+        <p class="mt-4 text-slate-700">
+          Fokus kita: <span class="font-medium">pemahaman konsep</span> dan <span class="font-medium">penerapan praktis</span> di Bursa Efek Indonesia.
+          Penjelasan dibuat sederhana tanpa banyak hitung-hitungan. Latihan ada, tapi porsinya kecil—supaya kamu paham dulu, baru praktik.
+        </p>
+
+        <!-- Quick actions -->
+        <div class="mt-6 flex flex-wrap gap-3">
+          <a href="#materi" class="px-4 py-2 rounded-xl bg-sky-600 text-white hover:bg-sky-700">Mulai Materi</a>
+          <a href="#interaktif" class="px-4 py-2 rounded-xl border border-slate-300 hover:bg-slate-50">Mode Interaktif</a>
+          <button id="btnReset" class="px-4 py-2 rounded-xl border border-rose-300 text-rose-700 hover:bg-rose-50">Reset Data Sesi</button>
+        </div>
+
+        <!-- Profile minimal (cookie) -->
+        <div class="mt-6 card rounded-2xl p-4">
+          <div class="flex items-center justify-between gap-3">
+            <div class="w-full">
+              <label class="text-sm text-slate-600">Nama kamu (disimpan sebagai cookie):</label>
+              <input id="namaMahasiswa" type="text" placeholder="cth: Sinta Aulia"
+                class="mt-1 w-full ring-brand rounded-xl border border-slate-300 px-3 py-2"
+              />
+              <p class="mt-2 text-xs text-slate-500">Cookie: <code class="font-mono">pm_nama</code>, berlaku 30 hari.</p>
+            </div>
+            <button id="btnSimpanNama" class="mt-7 shrink-0 px-4 py-2 rounded-xl bg-slate-900 text-white hover:opacity-90">Simpan</button>
+          </div>
+        </div>
+
+        <!-- Link eksternal penting -->
+        <div class="mt-6 grid sm:grid-cols-2 gap-3">
+          <a target="_blank" rel="noopener" href="https://notebooklm.google.com/notebook/52930345-ad7e-4f0b-9585-29c96709c126" class="card rounded-2xl p-4 hover:border-sky-300">
+            <p class="text-xs text-slate-500">Materi 6</p>
+            <p class="font-medium">Chat Materi 6 – Indeks, Portofolio, Reksa Dana, ETF</p>
+          </a>
+          <a target="_blank" rel="noopener" href="https://chatgpt.com/g/g-68ce998cc58081919e3237b0d1043c7b-pengantar-pasar-modal-with-lensetek" class="card rounded-2xl p-4 hover:border-sky-300">
+            <p class="text-xs text-slate-500">Asisten Kuliah</p>
+            <p class="font-medium">GPT: Pengantar Pasar Modal with Lensetek</p>
+          </a>
+        </div>
+      </div>
+
+      <div class="card rounded-3xl p-6">
+        <h3 class="font-semibold text-lg">Tujuan Pembelajaran (ringkas)</h3>
+        <ul class="mt-3 space-y-2 text-slate-700 list-disc pl-5">
+          <li>Memahami apa itu pasar modal dan manfaatnya.</li>
+          <li>Membedakan instrumen: saham, obligasi, reksa dana, ETF.</li>
+          <li>Mengenali pelaku & lembaga (BEI, OJK, KSEI, perusahaan efek).</li>
+          <li>Mengerti IPO secara sederhana dan hak pemegang saham.</li>
+          <li>Menyadari risiko umum & etika berinvestasi (hindari FOMO, waspada bodong).</li>
+        </ul>
+        <p class="mt-4 text-sm text-slate-500">
+          Tip: baca pelan-pelan; tandai poin selesai di tab <span class="font-medium">Interaktif</span>.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Materi -->
+  <section id="materi" class="mx-auto max-w-6xl px-4 py-10">
+    <div class="grid lg:grid-cols-3 gap-6">
+      <article class="card rounded-2xl p-6 lg:col-span-2">
+        <h3 class="text-2xl font-bold">Materi Inti</h3>
+
+        <h4 class="mt-6 font-semibold text-lg">1) Apa itu Pasar Modal?</h4>
+        <p class="mt-2 text-slate-700">
+          Pasar modal adalah tempat bertemunya perusahaan yang butuh dana jangka panjang dengan investor yang ingin menanamkan modal.
+          Bayangkan seperti “<em>marketplace</em> untuk kepemilikan bisnis>”: perusahaan menerbitkan surat berharga (saham/obligasi), investor membeli.
+          Manfaat: perusahaan dapat modal, investor berpotensi mendapat imbal hasil. Risiko: harga bisa naik-turun, dan tidak ada jaminan keuntungan.
+        </p>
+
+        <h4 class="mt-6 font-semibold text-lg">2) Saham &amp; Obligasi (gambaran singkat)</h4>
+        <p class="mt-2 text-slate-700">
+          <span class="font-medium">Saham</span> = bukti kepemilikan. Kamu bisa hadir di RUPS dan berhak atas dividen jika dibagikan.
+          <span class="font-medium">Obligasi</span> = surat utang perusahaan/pemerintah. Kamu menerima kupon berkala sampai jatuh tempo.
+          Analogi sederhana: saham seperti “ikut memiliki warung”, obligasi seperti “meminjamkan uang ke warung”.
+        </p>
+
+        <h4 class="mt-6 font-semibold text-lg">3) Reksa Dana &amp; ETF</h4>
+        <p class="mt-2 text-slate-700">
+          Keduanya membantu diversifikasi. Bayangkan keranjang buah: bukan membeli satu jenis saja, tapi berbagai macam.
+          <span class="font-medium">Reksa Dana</span> dikelola Manajer Investasi; pembelian/penjualan lewat MI/agent.
+          <span class="font-medium">ETF</span> mirip reksa dana namun diperdagangkan seperti saham di bursa, jadi bisa dibeli saat jam pasar.
+        </p>
+
+        <h4 class="mt-6 font-semibold text-lg">4) Indeks &amp; Portofolio</h4>
+        <p class="mt-2 text-slate-700">
+          <span class="font-medium">Indeks</span> (mis. IHSG) adalah “nilai rata-rata” sekelompok saham. Ia membantu melihat arah pasar.
+          <span class="font-medium">Portofolio</span> adalah kumpulan asetmu. Prinsip sederhana: jangan menaruh semua telur di satu keranjang.
+        </p>
+
+        <h4 class="mt-6 font-semibold text-lg">5) IPO (Initial Public Offering)</h4>
+        <p class="mt-2 text-slate-700">
+          IPO adalah saat perusahaan pertama kali menjual saham ke publik. Peran <em>underwriter</em> membantu menyiapkan dokumen, harga,
+          dan distribusi. Untuk investor pemula: pahami bisnisnya dan baca prospektus ringkas (risiko utama, tujuan penggunaan dana, dan struktur kepemilikan).
+        </p>
+
+        <div class="mt-6 p-4 rounded-xl bg-sky-50 border border-sky-200">
+          <p class="font-medium">Catatan penting:</p>
+          <ul class="mt-2 list-disc pl-5 text-slate-700">
+            <li><span class="font-medium">Likuiditas</span>: kemudahan jual-beli. Saham likuid cenderung spread lebih ketat.</li>
+            <li><span class="font-medium">Risiko pasar</span>: harga bisa fluktuatif; gunakan horizon waktu yang sesuai.</li>
+            <li><span class="font-medium">Jangan FOMO</span>: punya rencana sederhana, catat alasan beli/jual.</li>
+          </ul>
+        </div>
+      </article>
+
+      <!-- Sisi kanan: Tautan & ringkasan -->
+      <aside class="card rounded-2xl p-6 h-max sticky top-20">
+        <h4 class="font-semibold">Tautan Cepat</h4>
+        <ul class="mt-3 space-y-2 text-sm">
+          <li><a class="link" target="_blank" rel="noopener" href="https://notebooklm.google.com/notebook/52930345-ad7e-4f0b-9585-29c96709c126">Chat Materi 6 (NotebookLM)</a></li>
+          <li><a class="link" target="_blank" rel="noopener" href="https://chatgpt.com/g/g-68ce998cc58081919e3237b0d1043c7b-pengantar-pasar-modal-with-lensetek">GPT: Pengantar Pasar Modal with Lensetek</a></li>
+          <li><a class="link" target="_blank" rel="noopener" href="https://chatgpt.com/g/g-CUB7HlYcl-value-investor-advisor-with-lensetek-llc">IPO AI Analyzer (Lensetek)</a></li>
+        </ul>
+
+        <div class="mt-6">
+          <h5 class="font-semibold">Ringkasan cepat</h5>
+          <ul class="mt-2 text-slate-700 text-sm list-disc pl-5">
+            <li>Saham = kepemilikan; Obligasi = pinjaman.</li>
+            <li>Reksa Dana/ETF = cara praktis diversifikasi.</li>
+            <li>Indeks = termometer pasar; Portofolio = keranjang asetmu.</li>
+            <li>IPO = pertama kali saham dijual ke publik; baca prospektus ringkas.</li>
+          </ul>
+        </div>
+      </aside>
+    </div>
+  </section>
+
+  <!-- Interaktif -->
+  <section id="interaktif" class="mx-auto max-w-6xl px-4 py-10">
+    <div class="grid lg:grid-cols-2 gap-6">
+      <!-- Checklist progres (cookies) -->
+      <div class="card rounded-2xl p-6">
+        <h3 class="text-xl font-bold">Checklist Progres</h3>
+        <p class="mt-1 text-slate-700 text-sm">Tandai poin yang sudah kamu kuasai. Disimpan sebagai cookie <code class="font-mono">pm_progress</code>.</p>
+        <div id="checklist" class="mt-4 space-y-3">
+          <!-- item checklist dibuat via JS -->
+        </div>
+        <div class="mt-4 flex items-center gap-3">
+          <button id="btnSimpanChecklist" class="px-4 py-2 rounded-xl bg-sky-600 text-white hover:bg-sky-700">Simpan Checklist</button>
+          <span id="savedAt" class="text-xs text-slate-500"></span>
+        </div>
+      </div>
+
+      <!-- Catatan sesi (sessionStorage) -->
+      <div class="card rounded-2xl p-6">
+        <h3 class="text-xl font-bold">Catatan Sesi</h3>
+        <p class="mt-1 text-slate-700 text-sm">Ini hanya tersimpan di <span class="font-medium">session</span> (hilang ketika tab ditutup). Kegunaan: latihan menulis alasan beli/jual, atau rangkum materi.</p>
+        <textarea id="catatan" rows="8" class="mt-3 w-full rounded-xl border border-slate-300 px-3 py-2 ring-brand" placeholder="Tulis poin penting versi kamu..."></textarea>
+        <div class="mt-3 flex items-center gap-3">
+          <button id="btnSimpanCatatan" class="px-4 py-2 rounded-xl border border-slate-300 hover:bg-slate-50">Simpan Catatan</button>
+          <span id="savedNote" class="text-xs text-slate-500"></span>
+        </div>
+      </div>
+
+      <!-- Mini kuis (cookie skor) -->
+      <div class="card rounded-2xl p-6 lg:col-span-2">
+        <h3 class="text-xl font-bold">Mini Kuis</h3>
+        <p class="mt-1 text-slate-700 text-sm">Jawab singkat. Skor disimpan di cookie <code class="font-mono">pm_quiz</code>.</p>
+        <form id="quizForm" class="mt-4 space-y-6">
+          <div>
+            <label class="font-medium">1) Saham menunjukkan kepemilikan perusahaan.</label>
+            <div class="mt-2 space-x-4">
+              <label><input type="radio" name="q1" value="true" class="mr-1">Benar</label>
+              <label><input type="radio" name="q1" value="false" class="mr-1">Salah</label>
+            </div>
+          </div>
+          <div>
+            <label class="font-medium">2) ETF paling mirip dengan...</label>
+            <div class="mt-2 space-y-2">
+              <label class="block"><input type="radio" name="q2" value="a" class="mr-1"> Tabungan berjangka</label>
+              <label class="block"><input type="radio" name="q2" value="b" class="mr-1"> Reksa dana yang bisa diperdagangkan di bursa</label>
+              <label class="block"><input type="radio" name="q2" value="c" class="mr-1"> E-money</label>
+            </div>
+          </div>
+          <div>
+            <label class="font-medium">3) Indeks saham seperti IHSG berfungsi sebagai...</label>
+            <div class="mt-2 space-y-2">
+              <label class="block"><input type="radio" name="q3" value="a" class="mr-1"> Jaminan keuntungan</label>
+              <label class="block"><input type="radio" name="q3" value="b" class="mr-1"> Termometer yang menggambarkan kinerja kelompok saham</label>
+              <label class="block"><input type="radio" name="q3" value="c" class="mr-1"> Aplikasi mobile trading</label>
+            </div>
+          </div>
+          <div class="flex items-center gap-3">
+            <button type="submit" class="px-4 py-2 rounded-xl bg-slate-900 text-white hover:opacity-90">Kumpulkan</button>
+            <span id="quizResult" class="text-sm"></span>
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- Video -->
+  <section id="video" class="mx-auto max-w-6xl px-4 py-10">
+    <div class="card rounded-2xl p-6">
+      <h3 class="text-xl font-bold">Video Materi</h3>
+      <p class="mt-1 text-slate-700 text-sm">Tonton pelan-pelan, lalu tandai progres di checklist.</p>
+      <div class="mt-4 aspect-video rounded-xl overflow-hidden">
+        <iframe class="w-full h-full" src="https://www.youtube.com/embed/626saJZRauw?si=ZR1Lro88TM3WxICN"
+          title="YouTube video player" frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+      </div>
+    </div>
+  </section>
+
+  <!-- Alat Bantu -->
+  <section id="alat" class="mx-auto max-w-6xl px-4 py-10">
+    <div class="grid lg:grid-cols-2 gap-6">
+      <!-- IPO AI Analyzer -->
+      <div class="card rounded-2xl p-6">
+        <h3 class="text-xl font-bold">IPO AI Analyzer (Lensetek)</h3>
+        <p class="mt-2 text-slate-700">
+          Cocok untuk memahami <em>prospektus</em> tanpa pusing. Kamu bisa <span class="font-medium">unggah file prospektus (PDF)</span>, lalu minta ringkasan bagian penting:
+          model bisnis, penggunaan dana IPO, risiko utama, dan struktur pemegang saham.
+        </p>
+
+        <div class="mt-4 p-4 rounded-xl bg-sky-50 border border-sky-200">
+          <p class="font-medium">Cara pakai yang efektif:</p>
+          <ol class="mt-2 list-decimal pl-5 text-slate-700 space-y-2">
+            <li>Buka <a class="link" target="_blank" rel="noopener" href="https://chatgpt.com/g/g-CUB7HlYcl-value-investor-advisor-with-lensetek-llc">IPO AI Analyzer</a>.</li>
+            <li>Unggah file prospektus IPO (PDF). Bisa versi ringkas jika ukuran besar.</li>
+            <li>Berikan perintah jelas: apa yang ingin diambil (ringkasan bisnis, risiko, valuasi sederhana tanpa hitung, dll.).</li>
+            <li>Minta tabel ringkasan dan daftar tanya-lanjut (apa yang perlu dicek sebelum keputusan).</li>
+          </ol>
+        </div>
+
+        <div class="mt-4">
+          <p class="font-medium">Contoh prompt (setelah unggah PDF):</p>
+          <pre class="mt-2 p-4 bg-slate-100 rounded-xl text-sm overflow-x-auto">
+Ringkas prospektus ini dalam 10 poin paling penting, fokus pada:
+- model bisnis & sumber pendapatan,
+- penggunaan dana IPO,
+- risiko utama (operasional, regulasi, likuiditas),
+- struktur pemegang saham dan potensi <i>dilution</i>.
+Buat tabel ringkasan di akhir, lalu berikan 5 pertanyaan klarifikasi untuk <i>due diligence</i> pemula.
+          </pre>
+          <p class="mt-2 text-sm text-slate-600">Tip: gunakan <span class="kbd">Shift</span> + <span class="kbd">Enter</span> untuk baris baru saat mengetik prompt.</p>
+        </div>
+      </div>
+
+      <!-- GPT Asisten Kuliah -->
+      <div class="card rounded-2xl p-6">
+        <h3 class="text-xl font-bold">Asisten Kuliah: Pengantar Pasar Modal (Lensetek)</h3>
+        <p class="mt-2 text-slate-700">
+          Gunakan GPT ini untuk bertanya konsep secara sederhana. Contoh:
+        </p>
+        <ul class="mt-2 list-disc pl-5 text-slate-700">
+          <li>“Bedanya reksa dana dan ETF apa, jelaskan pakai analogi?”</li>
+          <li>“Apa itu IPO? Bagian prospektus mana yang harus saya baca lebih dulu?”</li>
+          <li>“Apa arti likuiditas dan kenapa penting untuk investor pemula?”</li>
+        </ul>
+        <div class="mt-4">
+          <a class="px-4 py-2 rounded-xl bg-slate-900 text-white hover:opacity-90 inline-block"
+             target="_blank" rel="noopener"
+             href="https://chatgpt.com/g/g-68ce998cc58081919e3237b0d1043c7b-pengantar-pasar-modal-with-lensetek">
+             Buka GPT Asisten Kuliah
+          </a>
+        </div>
+
+        <div class="mt-6 p-4 rounded-xl bg-amber-50 border border-amber-200">
+          <p class="font-medium">Catatan Etika & Risiko:</p>
+          <p class="text-slate-700 text-sm mt-1">
+            AI memberi ringkasan, bukan rekomendasi beli/jual. Tetap baca dokumen asli, pahami risikonya, dan gunakan akal sehat.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="mt-10 border-t border-slate-200">
+    <div class="mx-auto max-w-6xl px-4 py-8 text-sm text-slate-600">
+      <div class="flex items-center justify-between">
+        <p>&copy; <span id="tahun"></span> Pengantar Pasar Modal – Lensetek. Light theme. Semua penjelasan dibuat sederhana.</p>
+        <a class="link" href="#top">Kembali ke atas</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Data & Script -->
+  <script>
+    // ---------- Util Cookie ----------
+    function setCookie(name, value, days=30) {
+      const d = new Date();
+      d.setTime(d.getTime() + (days*24*60*60*1000));
+      document.cookie = name + "=" + encodeURIComponent(value) + ";expires=" + d.toUTCString() + ";path=/";
+    }
+    function getCookie(name) {
+      const cname = name + "=";
+      const ca = document.cookie.split(';');
+      for (let c of ca) {
+        c = c.trim();
+        if (c.indexOf(cname) === 0) return decodeURIComponent(c.substring(cname.length, c.length));
+      }
+      return null;
+    }
+    function eraseCookie(name) {
+      document.cookie = name + "=; Max-Age=-99999999; path=/";
+    }
+
+    // ---------- Checklist Data ----------
+    const checklistItems = [
+      { id: "c1", text: "Saya paham beda saham vs obligasi." },
+      { id: "c2", text: "Saya tahu fungsi indeks (mis. IHSG) sebagai termometer pasar." },
+      { id: "c3", text: "Saya mengerti ide portofolio: jangan satu keranjang." },
+      { id: "c4", text: "Saya kenal reksa dana & ETF sebagai cara praktis diversifikasi." },
+      { id: "c5", text: "Saya tahu gambaran IPO dan pentingnya baca prospektus ringkas." },
+      { id: "c6", text: "Saya sadar risiko pasar dan pentingnya rencana (hindari FOMO)." }
+    ];
+
+    // ---------- Render Checklist ----------
+    const checklistEl = document.getElementById('checklist');
+    function renderChecklist() {
+      const saved = getCookie('pm_progress');
+      let done = {};
+      if (saved) { try { done = JSON.parse(saved); } catch(e){} }
+      checklistEl.innerHTML = '';
+      checklistItems.forEach(item => {
+        const wrap = document.createElement('label');
+        wrap.className = "flex items-start gap-3 p-3 rounded-xl border border-slate-200 hover:bg-slate-50";
+        wrap.innerHTML = `
+          <input type="checkbox" class="mt-1" data-id="${item.id}" ${done[item.id] ? 'checked' : ''}>
+          <span>${item.text}</span>
+        `;
+        checklistEl.appendChild(wrap);
+      });
+    }
+
+    // ---------- Save Checklist ----------
+    document.getElementById('btnSimpanChecklist').addEventListener('click', () => {
+      const inputs = checklistEl.querySelectorAll('input[type="checkbox"]');
+      const obj = {};
+      inputs.forEach(i => obj[i.getAttribute('data-id')] = i.checked);
+      setCookie('pm_progress', JSON.stringify(obj), 30);
+      const t = new Date().toLocaleString();
+      setCookie('pm_progress_saved', t, 30);
+      document.getElementById('savedAt').textContent = "Tersimpan: " + t;
+    });
+
+    // ---------- Nama (cookie) ----------
+    const namaInput = document.getElementById('namaMahasiswa');
+    function loadNama() {
+      const v = getCookie('pm_nama');
+      if (v) namaInput.value = v;
+    }
+    document.getElementById('btnSimpanNama').addEventListener('click', () => {
+      const v = (namaInput.value || '').trim();
+      if (!v) { alert('Isi nama terlebih dulu ya.'); return; }
+      setCookie('pm_nama', v, 30);
+      alert('Nama disimpan sebagai cookie selama 30 hari.');
+    });
+
+    // ---------- Catatan (sessionStorage) ----------
+    const catatanEl = document.getElementById('catatan');
+    function loadCatatan() {
+      const v = sessionStorage.getItem('pm_catatan') || '';
+      catatanEl.value = v;
+      if (v) document.getElementById('savedNote').textContent = "Dimuat dari session";
+    }
+    document.getElementById('btnSimpanCatatan').addEventListener('click', () => {
+      sessionStorage.setItem('pm_catatan', catatanEl.value || '');
+      document.getElementById('savedNote').textContent = "Tersimpan di session";
+    });
+
+    // ---------- Quiz (cookie skor) ----------
+    const quizForm = document.getElementById('quizForm');
+    quizForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const ans = {
+        q1: quizForm.q1?.value,
+        q2: quizForm.q2?.value,
+        q3: quizForm.q3?.value,
+      };
+      let score = 0;
+      if (ans.q1 === 'true') score++;
+      if (ans.q2 === 'b') score++;
+      if (ans.q3 === 'b') score++;
+      setCookie('pm_quiz', String(score), 30);
+      document.getElementById('quizResult').textContent = `Skor: ${score}/3 — bagus!`;
+    });
+
+    // ---------- Reset Data ----------
+    document.getElementById('btnReset').addEventListener('click', () => {
+      ['pm_nama','pm_progress','pm_progress_saved','pm_quiz'].forEach(eraseCookie);
+      sessionStorage.removeItem('pm_catatan');
+      renderChecklist();
+      loadNama();
+      loadCatatan();
+      document.getElementById('savedAt').textContent = '';
+      document.getElementById('savedNote').textContent = '';
+      document.getElementById('quizResult').textContent = '';
+      alert('Data cookie & session sudah dihapus.');
+    });
+
+    // ---------- Init ----------
+    (function init() {
+      document.getElementById('tahun').textContent = new Date().getFullYear();
+      renderChecklist();
+      loadNama();
+      loadCatatan();
+      const last = getCookie('pm_progress_saved');
+      if (last) document.getElementById('savedAt').textContent = "Terakhir simpan: " + last;
+    })();
+  </script>
+</body>
+</html>

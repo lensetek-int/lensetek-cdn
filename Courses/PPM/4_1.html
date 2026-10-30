@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Materi 4 — Perusahaan Efek & Emiten | Pengantar Pasar Modal</title>
+  <meta name="description" content="Materi 4: Perusahaan Efek & Emiten. Pendalaman IPO, underwriter, broker/WPPE, emiten & perusahaan publik, hak pemegang saham, lembaga pasar modal. Disertai video, ringkasan, dan tautan." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #f9fafb;
+      --card: #ffffff;
+      --ink: #0f172a;
+      --muted: #475569;
+      --line: #e2e8f0;
+      --primary: #2563eb;
+      --primary-ink: #ffffff;
+    }
+
+    * { box-sizing: border-box; }
+    html, body {
+      margin: 0;
+      padding: 0;
+      background: var(--bg);
+      color: var(--ink);
+      font-family: 'Inter', system-ui, sans-serif;
+      line-height: 1.6;
+    }
+    a { color: var(--primary); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    header {
+      background: var(--card);
+      border-bottom: 1px solid var(--line);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      width: 100%;
+    }
+
+    .nav {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 20px;
+      flex-wrap: wrap;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 5px;
+      font-weight: 700;
+      font-size: 18px;
+      color: var(--ink);
+    }
+
+    .brand span.title-text {
+      display: inline-block;
+    }
+
+    .pill {
+      padding: 4px 10px;
+      background: var(--bg);
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      font-size: 12px;
+      color: var(--muted);
+    }
+
+    nav {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      margin-top: 8px;
+    }
+
+    nav a.btn {
+      background: var(--card);
+      border: 1px solid var(--line);
+      padding: 8px 12px;
+      border-radius: 8px;
+      color: var(--ink);
+      font-weight: 500;
+      transition: all 0.2s ease;
+    }
+
+    nav a.btn:hover {
+      background: var(--primary);
+      color: var(--primary-ink);
+    }
+
+    .hero {
+      padding: 40px 16px;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 16px;
+      text-align: left;
+    }
+
+    .badge {
+      display: inline-block;
+      border: 1px solid var(--line);
+      padding: 6px 12px;
+      border-radius: 999px;
+      color: var(--muted);
+      background: #fff;
+      font-size: 14px;
+    }
+
+    h1 {
+      font-size: 28px;
+      line-height: 1.3;
+      margin: 0;
+    }
+
+    p.lead {
+      font-size: 16px;
+      color: var(--muted);
+      margin-bottom: 12px;
+    }
+
+    .cta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .btn-primary {
+      background: var(--primary);
+      color: var(--primary-ink);
+      padding: 10px 14px;
+      border-radius: 8px;
+      border: none;
+      font-weight: 600;
+      cursor: pointer;
+    }
+
+    .btn-outline {
+      background: #fff;
+      color: var(--ink);
+      border: 1px solid var(--line);
+      padding: 10px 14px;
+      border-radius: 8px;
+      font-weight: 600;
+      cursor: pointer;
+    }
+
+    .section {
+      padding: 32px 16px;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+
+    .card {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      padding: 16px;
+      margin-bottom: 16px;
+    }
+
+    iframe {
+      width: 100%;
+      height: 300px;
+      border: none;
+      border-radius: 12px;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 10px;
+    }
+
+    th, td {
+      padding: 10px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    th {
+      background: #f1f5f9;
+    }
+
+    .links {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .linkcard {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      padding: 14px;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      border-top: 1px solid var(--line);
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    @media (min-width: 768px) {
+      .hero {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+      }
+      h1 { font-size: 36px; }
+      p.lead { font-size: 18px; }
+      iframe { height: 480px; }
+      .brand { flex-direction: row; gap: 10px; font-size: 20px; }
+      nav { margin-top: 0; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="nav">
+      <div class="brand">
+        <span class="title-text">Pengantar Pasar Modal</span>
+        <span class="pill">Materi 4</span>
+      </div>
+      <nav>
+        <a class="btn" href="#ringkasan">Ringkasan</a>
+        <a class="btn" href="#konten">Konten</a>
+        <a class="btn" href="#video">Video</a>
+        <a class="btn" href="#tautan">Tautan</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="ringkasan">
+      <div>
+        <span class="badge">Tema: Perusahaan Efek &amp; Emiten</span>
+        <h1>Materi 4 — Perusahaan Efek &amp; Emiten</h1>
+        <p class="lead">Pendalaman mekanisme <b>IPO</b>, peran <b>underwriter</b>, tugas <b>broker/WPPE</b>, konsep <b>emiten &amp; perusahaan publik</b>, serta <b>hak pemegang saham</b>—dengan fokus pada praktik di Indonesia.</p>
+        <div class="cta">
+          <a href="#konten" class="btn-primary">Jelajahi Materi</a>
+          <a href="#tautan" class="btn-outline">Buka Tautan Pendukung</a>
+        </div>
+        <p style="font-size: 13px; color: var(--muted); margin-top: 8px;">CPMK: Memahami mekanisme IPO & aktor emisi efek • Metode: presentasi & diskusi • Penilaian: tugas individu (5%).</p>
+      </div>
+    </section>
+
+    <section class="section" id="konten">
+      <div class="card">
+        <h2>Proses IPO (Ringkas)</h2>
+        <ol>
+          <li>Persiapan internal: audit laporan keuangan, tata kelola, penunjukan underwriter & konsultan.</li>
+          <li>Pendaftaran ke OJK: pernyataan pendaftaran & prospektus awal.</li>
+          <li>Masa penawaran umum: bookbuilding & offering ke publik.</li>
+          <li>Listing di BEI: saham mulai diperdagangkan di pasar sekunder.</li>
+        </ol>
+      </div>
+
+      <div class="card">
+        <h2>Peran dan Tanggung Jawab</h2>
+        <ul>
+          <li><b>Underwriter</b>: Menilai kelayakan, menentukan harga, menyusun prospektus, menjamin penyerapan efek.</li>
+          <li><b>Broker / WPPE</b>: Perantara jual beli efek antara investor dan BEI, memberi rekomendasi dan layanan nasabah.</li>
+          <li><b>Emiten</b>: Pihak penerbit efek untuk publik, wajib keterbukaan informasi.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>Hak Pemegang Saham</h2>
+      <table>
+        <thead>
+          <tr><th>Hak</th><th>Penjelasan</th><th>Contoh</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Dividen</td><td>Berhak atas pembagian laba jika diputuskan RUPS.</td><td>Perusahaan rutin bagi dividen tahunan.</td></tr>
+          <tr><td>Hak Suara</td><td>Berhak memberikan suara dalam RUPS.</td><td>Pemilihan direksi dan komisaris.</td></tr>
+          <tr><td>Hak Informasi</td><td>Berhak mengakses laporan keuangan & informasi publik.</td><td>Laporan keuangan tahunan BEI.</td></tr>
+          <tr><td>HMETD</td><td>Hak memesan efek terlebih dahulu saat rights issue.</td><td>Rights issue perusahaan konstruksi.</td></tr>
+          <tr><td>Sisa Kekayaan</td><td>Hak atas sisa aset pasca likuidasi.</td><td>Diterima setelah pelunasan utang.</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section class="section" id="video">
+      <h2>Video YouTube Materi 4</h2>
+      <p class="muted">Tonton penjelasan visual tentang praktik IPO & peran perusahaan efek di Indonesia.</p>
+      <iframe src="https://www.youtube.com/embed/TtkywL0OJVY?si=LIw0FciwRtULN5Ij" title="YouTube Materi 4" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+    </section>
+
+    <section class="section" id="tautan">
+      <h2>Tautan Pendukung Materi</h2>
+      <div class="links">
+        <a class="linkcard" href="https://notebooklm.google.com/notebook/943e178b-81fa-4144-84fe-5f7257a16434" target="_blank">Materi 4 di NotebookLM</a>
+        <a class="linkcard" href="https://chatgpt.com/g/g-68ce998cc58081919e3237b0d1043c7b-pengantar-pasar-modal-with-lensetek" target="_blank">Chatbot Pengantar Pasar Modal</a>
+        <a class="linkcard" href="https://youtu.be/TtkywL0OJVY" target="_blank">Link YouTube Cadangan</a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    © 2025 Lensetek, LLC. • <a href="#ringkasan">Kembali ke atas</a>
+  </footer>
+</body>
+</html>
